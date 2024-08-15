@@ -1,118 +1,69 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Layout, Menu, theme } from "antd";
+import React, { useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { MenuItems } from "./const";
 import "./App.scss";
-
-const { Header, Content, Footer } = Layout;
-
-const menusItems = [
-  "Why",
-  "How",
-  "Get Involved",
-  "FAQ",
-  "Testimonials",
-  "Community Support",
-];
-
-const items = menusItems.map((item) => ({
-  key: item,
-  label: item,
-}));
+import Background from "./layout/Background";
 
 const App: React.FC = () => {
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
-
-  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const sections = {
-    Why: useRef<HTMLDivElement>(null),
-    How: useRef<HTMLDivElement>(null),
-    GetInvolved: useRef<HTMLDivElement>(null),
-    FAQ: useRef<HTMLDivElement>(null),
-    Testimonials: useRef<HTMLDivElement>(null),
-    CommunitySupport: useRef<HTMLDivElement>(null),
-  };
-
-  const handleMenuClick = (key: string) => {
-    const sectionRef = sections[key.replace(/ /g, "") as keyof typeof sections];
-    if (sectionRef && sectionRef.current) {
-      window.scrollTo({
-        top: sectionRef.current.offsetTop, // 偏移量与 Header 的高度一致
-        behavior: "smooth",
-      });
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
-  };
+  }, [location]);
 
   return (
-    <Layout>
-      <Header
-        className="fixed inset-0 z-50 h-fit flex justify-between items-center bg-white shadow-sm"
-        style={{
-          boxShadow: isScrolled ? "0 2px 8px rgba(0, 0, 0, 0.15)" : "none",
-          transition: "box-shadow 0.3s ease",
-        }}
-      >
-        <h1 className="text-lg font-bold">ETH Colored Address Protocol</h1>
-        <Menu
-          theme="light"
-          mode="horizontal"
-          defaultSelectedKeys={["1"]}
-          items={items}
-          className={"menu"}
-          style={{ minWidth: 0, backgroundColor: "#FFFFFF" }}
-          onClick={(e) => handleMenuClick(e.key)}
-        />
-      </Header>
+    <>
+      <Background />
 
-      <Content
-        style={{
-          padding: "0 48px",
-          backgroundColor: "#FFFFFF",
-          width: "100%",
-          height: "100%",
-          marginTop: "15vh",
-        }}
-      >
-        {menusItems.map((item) => (
-          <div key={item}>
-            {/* 占位元素，保持与 Header 高度一致 */}
-            <div
-              style={{ height: "15vh" }}
-              ref={sections[item.replace(/ /g, "") as keyof typeof sections]}
-            ></div>
-            <div
-              style={{
-                background: colorBgContainer,
-                minHeight: 280,
-                padding: 24,
-                borderRadius: borderRadiusLG,
-                marginBottom: "20px",
-              }}
-            >
-              <h2>{item}</h2>
-              <p>Content for {item} section...</p>
-            </div>
+      <div className="absolute inset-0">
+        <header className="sticky top-0 h-fit py-6 px-8 backdrop-blur-sm bg-white/30 flex justify-between items-center shadow-sm">
+          <h1 className="text-lg font-bold">ETH Colored Address Protocol</h1>
+
+          <ul className="flex flex-nowrap gap-4">
+            {MenuItems.map((it) => (
+              <NavLink to={`/#${it.id}`}>
+                <li>{it.label}</li>
+              </NavLink>
+            ))}
+          </ul>
+        </header>
+
+        <main className="max-w-screen-md mx-auto py-6">
+          <div id="why" className="h-60">
+            why
           </div>
-        ))}
-      </Content>
 
-      <Footer style={{ textAlign: "center" }}>
-        Ant Design ©{new Date().getFullYear()} Created by Ant UED
-      </Footer>
-    </Layout>
+          <div id="how" className="h-60">
+            how
+          </div>
+
+          <div id="involved" className="h-60">
+            get involved
+          </div>
+
+          <div id="faq" className="h-60">
+            faq
+          </div>
+
+          <div id="testimonials" className="h-60">
+            testimonials
+          </div>
+
+          <div id="support" className="h-60">
+            support
+          </div>
+        </main>
+
+        <footer className="text-center py-4 border-t">
+          EthShenzhen@{new Date().getFullYear()}
+        </footer>
+      </div>
+    </>
   );
 };
 
