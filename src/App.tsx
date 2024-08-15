@@ -3,6 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { MenuItems } from "./const";
 import "./App.scss";
 import Background from "./layout/Background";
+import { ConnectKitButton } from "connectkit";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -34,6 +35,7 @@ const App: React.FC = () => {
         </header>
 
         <main className="max-w-screen-md mx-auto py-6">
+          <ConnectKitButton />
           <div id="why" className="h-60">
             why
           </div>
