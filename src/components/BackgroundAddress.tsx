@@ -38,9 +38,9 @@ export const AddressPattern = ({ address }: { address: string }) => {
 
   return (
     <>
-      <svg width="100" height="100" viewBox="0 0 100 100">
+      {/* <svg width="100" height="100" viewBox="0 0 100 100">
         {shapes}
-      </svg>
+      </svg> */}
       <div>
         <div className="font-mono text-sm truncate mb-2">{address}</div>
         <div className="flex">
