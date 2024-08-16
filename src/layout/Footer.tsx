@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Links } from "../const";
 
 const TwitterIcon = () => (
   <svg
@@ -40,7 +42,9 @@ export const Footer = () => (
     <span>EthShenzhen@{new Date().getFullYear()}</span>
     <div className="flex gap-4">
       <TwitterIcon />
-      <GithubIcon />
+      <Link to={Links.Github} target="_blank">
+        <GithubIcon />
+      </Link>
     </div>
   </footer>
 );

@@ -19,11 +19,11 @@ export const AddressColorBar = ({ address }: { address: string }) => {
 
   return (
     <>
-      <div className="flex h-8">
+      <div className="flex h-8 items-center">
         {colors.map((color, index) => (
           <div
             key={index}
-            className="w-4 first:rounded-l-md last:rounded-r-md"
+            className="w-4 h-6 first:rounded-l-md last:rounded-r-md"
             style={{
               backgroundColor: color,
             }}
