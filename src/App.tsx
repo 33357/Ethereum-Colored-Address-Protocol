@@ -11,6 +11,7 @@ import {
   AddressColorBar,
   AddressPattern,
   MainButton,
+  WalletIcon,
 } from "./components";
 import "./App.scss";
 
@@ -94,10 +95,13 @@ const App: React.FC = () => {
           {/* DEMO */}
           <div className="flex flex-col gap-4 text-gray-100 font-bold">
             <Input
+              className="w-full"
               value={address}
               placeholder="ETH Address"
+              icon={<WalletIcon />}
               onChange={(e) => setAddress(e.target.value)}
             />
+
             <DemoContainer>
               <AddressColorBar address={address} />
             </DemoContainer>
