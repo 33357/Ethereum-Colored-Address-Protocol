@@ -15,6 +15,7 @@ import {
 } from "./components";
 import "./App.scss";
 import TextCard from "./components/TextCard";
+import {scrollIntoViewById} from "./lib/utils";
 
 const App: React.FC = () => {
     const location = useLocation();
@@ -42,12 +43,10 @@ const App: React.FC = () => {
         setIsRunning(prev => !prev); // 切换定时器的运行状态
     };
 
+
     useEffect(() => {
         if (location.hash) {
-            const element = document.querySelector(location.hash);
-            if (element) {
-                element.scrollIntoView({behavior: "smooth"});
-            }
+            scrollIntoViewById(location.hash);
         } else {
             document
                 .querySelector("#container")
@@ -96,7 +95,7 @@ const App: React.FC = () => {
                                     该方案旨为钱包地址增加视觉校验，通过地址哈希值计算唯一颜色组合，减少输入地址时的校验负担，同时防范交互时黑客钓鱼行为的潜在风险。
                                 </p>
                                 <div className="mt-8">
-                                    <MainButton/>
+                                    {MainButton("#try")}
                                 </div>
                             </div>
 
@@ -152,7 +151,8 @@ const App: React.FC = () => {
                     </div>
 
                     {/* DEMO */}
-                    <div className="flex">
+                    <div id="try" className="my-6 py-36">
+                        <p className="text-white text-2xl text-center pb-16">Try!</p>
                         <div
                             className="min-w-80 w-full flex flex-col gap-4 text-gray-100 font-bold bg-slate-50/10 p-6 rounded-md">
                             <Input

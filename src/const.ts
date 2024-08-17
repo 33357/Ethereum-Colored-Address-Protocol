@@ -14,6 +14,10 @@ export const TestAddress = [
 
 export const MenuItems = [
     {
+        label: "Try",
+        id: "try",
+    },
+    {
         label: "Why",
         id: "why",
     },

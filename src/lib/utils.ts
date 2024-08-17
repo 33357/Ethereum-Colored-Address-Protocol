@@ -16,3 +16,10 @@ export function replaceCharByIndex(str: string, index: number, replacement: stri
 
     return str.slice(0, index) + replacement + str.slice(index + 1);
 }
+
+export function scrollIntoViewById(id: string)  {
+    const element = document.querySelector(`${id}`);
+    if (element) {
+        element.scrollIntoView({behavior: "smooth"});
+    }
+}
