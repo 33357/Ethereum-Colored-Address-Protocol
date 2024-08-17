@@ -12,12 +12,14 @@ import {
   AddressPattern,
   MainButton,
   WalletIcon,
+  Checkbox,
 } from "./components";
 import "./App.scss";
 
 const App: React.FC = () => {
   const location = useLocation();
   const [address, setAddress] = useState<string>(TestAddress[0]);
+  const [mode, setMode] = useState<"simple" | "normal">("normal");
   const { addresses, generate } = useRandomAddress();
 
   useEffect(() => {
@@ -86,6 +88,21 @@ const App: React.FC = () => {
               </div>
 
               <div className="h-fit max-w-[450px] w-full mt-10 md:mt-0 flex flex-col gap-4 items-center justify-center p-6 bg-gray-300/10 backdrop-blur-sm rounded-lg shadow-sm font-bold text-gray-100">
+                <div className="w-full flex justify-start items-center space-x-2">
+                  <Checkbox
+                    id="mode"
+                    value={"simple"}
+                    onCheckedChange={(v) => {
+                      setMode(v ? "simple" : "normal");
+                    }}
+                  />
+                  <label
+                    htmlFor="mode"
+                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    Simple View
+                  </label>
+                </div>
                 {addresses.map((it, index) => (
                   <motion.div
                     key={it}
@@ -95,9 +112,13 @@ const App: React.FC = () => {
                       duration: 0.5,
                       delay: index * 0.2,
                     }}
-                    className="w-full overflow-hidden"
+                    className="flex justify-center w-full overflow-hidden"
                   >
-                    <ColorfulAddress key={it} address={it} />
+                    <ColorfulAddress
+                      key={it}
+                      address={it}
+                      simple={mode === "simple"}
+                    />
                   </motion.div>
                 ))}
               </div>

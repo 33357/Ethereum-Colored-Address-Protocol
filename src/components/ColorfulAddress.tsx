@@ -19,7 +19,13 @@ const calculateColors = (address: string): string[] => {
 };
 
 // 组件渲染地址
-export const ColorfulAddress = ({ address }: { address: string }) => {
+export const ColorfulAddress = ({
+  address,
+  simple,
+}: {
+  address: string;
+  simple?: boolean;
+}) => {
   if (!isValidAddress(address)) return <span>{address || "0x..."}</span>;
 
   const colors = calculateColors(address);
@@ -35,7 +41,7 @@ export const ColorfulAddress = ({ address }: { address: string }) => {
           {firstFive[index]}
         </span>
       ))}
-      <span>{address.slice(7, -5)}</span>
+      <span>{simple ? "..." : address.slice(7, -5)}</span>
       {colors.slice(5, 10).map((color, index) => (
         <span key={index} style={{ color }}>
           {lastFive[index]}
