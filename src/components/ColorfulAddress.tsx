@@ -34,7 +34,7 @@ export const ColorfulAddress = ({
   const lastFive = address.slice(-5);
 
   return (
-    <div className="overflow-hidden text-ellipsis overflow-ellipsis">
+    <div className="overflow-hidden text-base" style={{ fontFamily: "monospace"}}>
       <span>0x</span>
       {colors.slice(0, 5).map((color, index) => (
         <span key={index} style={{ color }}>

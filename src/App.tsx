@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { MenuItems, TestAddress } from "./const";
-import { DemoContainer } from "./components/DemoContainer";
+import { DemoContainer } from "./components";
 import { useRandomAddress } from "./hooks/useRandomAddress";
 import { Background, Footer } from "./layout";
 import { motion } from "framer-motion";
@@ -87,7 +87,7 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="h-fit max-w-[450px] w-full mt-10 md:mt-0 flex flex-col gap-4 items-center justify-center p-6 bg-gray-300/10 backdrop-blur-sm rounded-lg shadow-sm font-bold text-gray-100">
+              <div className="h-fit max-w-[500px] w-full mt-10 md:mt-0 flex flex-col gap-4 items-center justify-center p-6 bg-gray-300/10 backdrop-blur-sm rounded-lg shadow-sm font-bold text-gray-100">
                 <div className="w-full flex justify-start items-center space-x-2">
                   <Checkbox
                     id="mode"
