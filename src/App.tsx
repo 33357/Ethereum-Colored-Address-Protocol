@@ -150,26 +150,32 @@ const App: React.FC = () => {
 
           <div id="why" className="my-6">
             <p className="text-white text-2xl text-center">Why?</p>
+            <div className="text-white">TODO: 补充内容</div>
           </div>
 
           <div id="how" className="my-6">
             <p className="text-white text-2xl text-center">How?</p>
+            <div className="text-white">TODO: 补充内容</div>
           </div>
 
           <div id="involved" className="my-6">
             <p className="text-white text-2xl text-center">Get Involved</p>
+            <div className="text-white">TODO: 补充内容</div>
           </div>
 
           <div id="faq" className="my-6">
             <p className="text-white text-2xl text-center">FAQ</p>
+            <div className="text-white">TODO: 补充内容</div>
           </div>
 
           <div id="testimonials" className="my-6">
             <p className="text-white text-2xl text-center">Testimonials</p>
+            <div className="text-white">TODO: 补充内容</div>
           </div>
 
           <div id="support" className="my-6">
             <p className="text-white text-2xl text-center">Support</p>
+            <div className="text-white">TODO: 补充内容</div>
           </div>
         </main>
 
