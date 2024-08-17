@@ -31,23 +31,23 @@ export const AddressPattern = ({ address }: { address: string }) => {
       );
     }
 
-    return { shapes, colors };
+    return { colors };
   };
 
-  const { shapes, colors } = generatePattern(address);
+  const { colors } = generatePattern(address);
 
   return (
     <>
       {/* <svg width="100" height="100" viewBox="0 0 100 100">
         {shapes}
       </svg> */}
-      <div className="overflow-hidden text-ellipsis overflow-ellipsis">
+      <div className="overflow-hidden text-ellipsis">
         <div className="font-mono text-sm truncate mb-2">{address}</div>
         <div className="flex">
           {colors.map((color, index) => (
             <div
               key={index}
-              className="w-4 h-4 rounded-full"
+              className="w-2 h-2 rounded-full"
               style={{ backgroundColor: color }}
             />
           ))}

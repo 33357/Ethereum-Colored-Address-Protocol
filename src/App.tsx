@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import {
   Input,
   ColorfulAddress,
-  AddressColorBar,
   AddressPattern,
   MainButton,
   WalletIcon,
@@ -136,9 +135,6 @@ const App: React.FC = () => {
                 onChange={(e) => setAddress(e.target.value)}
               />
 
-              <DemoContainer>
-                <AddressColorBar address={address} />
-              </DemoContainer>
               <DemoContainer>
                 <AddressPattern address={address} />
               </DemoContainer>
