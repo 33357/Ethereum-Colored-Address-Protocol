@@ -143,6 +143,9 @@ const App: React.FC = () => {
                 <AddressPattern address={address} />
               </DemoContainer>
               <DemoContainer>
+                <ColorfulAddress address={address} simple={true} />
+              </DemoContainer>
+              <DemoContainer>
                 <ColorfulAddress address={address} />
               </DemoContainer>
             </div>
