@@ -11,7 +11,7 @@ export const useRandomAddress = (props?: { count: number }) => {
         let address = ethers.Wallet.createRandom().address;
         _addresses.push(address);
         for (let i = 0; i < count - 1; i++) {
-            _addresses.push(replaceCharByIndex(address, 7 + i, address.charAt(7 + i) === 'a' ? 'b' : 'a'));
+            _addresses.push(replaceCharByIndex(address, 12 * i + 2, address.charAt(12 * i + 2) === 'a' ? 'b' : 'a'));
         }
         setAddresses(_addresses);
     }, [])
