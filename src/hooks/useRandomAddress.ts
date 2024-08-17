@@ -1,5 +1,6 @@
-import { ethers } from "ethers"
-import { useCallback, useEffect, useState } from "react"
+import {ethers} from "ethers"
+import {useCallback, useEffect, useState} from "react"
+import {replaceCharByIndex} from "../lib/utils";
 
 export const useRandomAddress = (props?: { count: number }) => {
 
@@ -7,16 +8,17 @@ export const useRandomAddress = (props?: { count: number }) => {
 
     const generate = useCallback((count: number = 5) => {
         let _addresses = []
-        for (let i = 0; i < count; i++) {
-            const wallet = ethers.Wallet.createRandom();
-            _addresses.push(wallet.address)
+        let address = ethers.Wallet.createRandom().address;
+        _addresses.push(address);
+        for (let i = 0; i < count - 1; i++) {
+            _addresses.push(replaceCharByIndex(address, 7 + i, address.charAt(7 + i) === 'a' ? 'b' : 'a'));
         }
-        setAddresses(_addresses)
+        setAddresses(_addresses);
     }, [])
 
     useEffect(() => {
         generate(props?.count)
     }, [generate, props])
 
-    return { addresses, generate }
+    return {addresses, generate}
 }
