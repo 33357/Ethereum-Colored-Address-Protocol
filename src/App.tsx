@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { MenuItems, TestAddress } from "./const";
 import { DemoContainer } from "./components/DemoContainer";
 import { useRandomAddress } from "./hooks/useRandomAddress";
@@ -34,6 +34,10 @@ const App: React.FC = () => {
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
+    } else {
+      document
+        .querySelector("#container")
+        ?.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [location]);
 
@@ -41,11 +45,13 @@ const App: React.FC = () => {
     <>
       <Background />
 
-      <div className="absolute inset-0 overflow-auto">
+      <div id="container" className="absolute inset-0 overflow-auto">
         <header className="sticky top-0 z-50 h-fit py-4 px-8 backdrop-blur-sm bg-white/5 flex justify-between items-center shadow-sm">
-          <h1 className="flex text-lg font-bold">
-            <img src="/eth-shenzhen.svg" alt="ETH ShenZhen" />
-          </h1>
+          <Link to={"/"}>
+            <h1 className="flex text-lg font-bold">
+              <img src="/eth-shenzhen.svg" alt="ETH ShenZhen" />
+            </h1>
+          </Link>
 
           <ul className="flex-nowrap gap-4 hidden md:flex">
             {MenuItems.map((it) => (
