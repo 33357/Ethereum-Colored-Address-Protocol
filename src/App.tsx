@@ -73,7 +73,7 @@ const App: React.FC = () => {
                         </h1>
                     </Link>
 
-                    <ul className="flex-nowrap gap-4 hidden md:flex">
+                    <ul className="flex-nowrap gap-8 hidden md:flex">
                         {MenuItems.map((it) => (
                             <NavLink key={it.id} to={`/#${it.id}`}>
                                 <li className="text-white">{it.label}</li>
