@@ -1,6 +1,6 @@
 {
   "name": "@adamleeeee/ethereum-colored-address-protocol",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "publishConfig": {
     "@adamleeeee:registry": "https://npm.pkg.github.com"
