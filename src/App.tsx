@@ -47,7 +47,7 @@ const App: React.FC = () => {
             <img src="/eth-shenzhen.svg" alt="ETH ShenZhen" />
           </h1>
 
-          <ul className="flex-nowrap gap-4 sm:hidden md:flex">
+          <ul className="flex-nowrap gap-4 hidden md:flex">
             {MenuItems.map((it) => (
               <NavLink key={it.id} to={`/#${it.id}`}>
                 <li className="text-white">{it.label}</li>
@@ -56,9 +56,9 @@ const App: React.FC = () => {
           </ul>
         </header>
 
-        <main className="max-w-screen-lg mx-auto py-6">
-          <div className="flex flex-col items-center justify-center h-dvh -mt-[88px]">
-            <div className="w-full flex justify-between items-center">
+        <main className="max-w-screen-xl mx-auto p-6">
+          <div className="w-full flex flex-col items-center justify-center h-dvh -mt-[88px]">
+            <div className="w-full flex flex-col md:flex-row justify-between items-center">
               <div className="flex flex-col gap-4">
                 <h1 className="font-bold text-4xl bg-gradient-to-r from-cyan-500 to-fuchsia-500 bg-clip-text text-transparent">
                   ETH Colored Address Protocol
@@ -74,7 +74,7 @@ const App: React.FC = () => {
                 </div>
               </div>
 
-              <div className="h-fit w-[450px] flex flex-col gap-4 items-center justify-center p-6 bg-gray-300/10 backdrop-blur-sm rounded-lg shadow-sm font-bold text-gray-100">
+              <div className="h-fit max-w-[450px] w-full mt-10 md:mt-0 flex flex-col gap-4 items-center justify-center p-6 bg-gray-300/10 backdrop-blur-sm rounded-lg shadow-sm font-bold text-gray-100">
                 {addresses.map((it, index) => (
                   <motion.div
                     key={it}
@@ -84,6 +84,7 @@ const App: React.FC = () => {
                       duration: 0.5,
                       delay: index * 0.2,
                     }}
+                    className="w-full overflow-hidden"
                   >
                     <ColorfulAddress key={it} address={it} />
                   </motion.div>
@@ -93,48 +94,50 @@ const App: React.FC = () => {
           </div>
 
           {/* DEMO */}
-          <div className="flex flex-col gap-4 text-gray-100 font-bold">
-            <Input
-              className="w-full"
-              value={address}
-              placeholder="ETH Address"
-              icon={<WalletIcon />}
-              onChange={(e) => setAddress(e.target.value)}
-            />
+          <div className="flex">
+            <div className="min-w-80 w-full flex flex-col gap-4 text-gray-100 font-bold bg-slate-50/10 p-6 rounded-md">
+              <Input
+                className="w-full"
+                value={address}
+                placeholder="ETH Address"
+                icon={<WalletIcon />}
+                onChange={(e) => setAddress(e.target.value)}
+              />
 
-            <DemoContainer>
-              <AddressColorBar address={address} />
-            </DemoContainer>
-            <DemoContainer>
-              <AddressPattern address={address} />
-            </DemoContainer>
-            <DemoContainer>
-              <ColorfulAddress address={address} />
-            </DemoContainer>
+              <DemoContainer>
+                <AddressColorBar address={address} />
+              </DemoContainer>
+              <DemoContainer>
+                <AddressPattern address={address} />
+              </DemoContainer>
+              <DemoContainer>
+                <ColorfulAddress address={address} />
+              </DemoContainer>
+            </div>
           </div>
 
-          <div id="why" className="">
-            <p className="text-white text-xl">Why?</p>
+          <div id="why" className="my-6">
+            <p className="text-white text-2xl text-center">Why?</p>
           </div>
 
-          <div id="how" className="">
-            <p className="text-white text-xl">How?</p>
+          <div id="how" className="my-6">
+            <p className="text-white text-2xl text-center">How?</p>
           </div>
 
-          <div id="involved" className="">
-            <p className="text-white text-xl">Get Involved</p>
+          <div id="involved" className="my-6">
+            <p className="text-white text-2xl text-center">Get Involved</p>
           </div>
 
-          <div id="faq" className="">
-            <p className="text-white text-xl">FAQ</p>
+          <div id="faq" className="my-6">
+            <p className="text-white text-2xl text-center">FAQ</p>
           </div>
 
-          <div id="testimonials" className="">
-            <p className="text-white text-xl">Testimonials</p>
+          <div id="testimonials" className="my-6">
+            <p className="text-white text-2xl text-center">Testimonials</p>
           </div>
 
-          <div id="support" className="">
-            <p className="text-white text-xl">Support</p>
+          <div id="support" className="my-6">
+            <p className="text-white text-2xl text-center">Support</p>
           </div>
         </main>
 

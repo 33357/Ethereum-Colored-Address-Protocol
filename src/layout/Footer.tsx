@@ -39,7 +39,7 @@ const GithubIcon = () => (
 
 export const Footer = () => (
   <footer className="text-center py-4 px-12 text-white border-t border-gray-600 flex justify-between">
-    <span>EthShenzhen@{new Date().getFullYear()}</span>
+    <span>ETHShenzhen@{new Date().getFullYear()}</span>
     <div className="flex gap-4">
       <TwitterIcon />
       <Link to={Links.Github} target="_blank">
