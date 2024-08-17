@@ -1,7 +1,7 @@
 {
-  "name": "ethereum-colored-address-protocol",
+  "name": "@adamleeeee/ethereum-colored-address-protocol",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.1.1",
     "@tanstack/react-query": "^5.51.23",
