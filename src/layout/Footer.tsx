@@ -41,7 +41,9 @@ export const Footer = () => (
   <footer className="text-center py-4 px-12 text-white border-t border-gray-600 flex justify-between">
     <span>ETHShenzhen@{new Date().getFullYear()}</span>
     <div className="flex gap-4">
-      <TwitterIcon />
+      <Link to={Links.Twitter} target="_blank">
+        <TwitterIcon />
+      </Link>
       <Link to={Links.Github} target="_blank">
         <GithubIcon />
       </Link>

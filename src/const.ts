@@ -1,4 +1,5 @@
 export const Links = {
+    Twitter: "https://x.com/33357xyz/status/1824471393297371186",
     Github: 'https://github.com/AdamLeeeee/Ethereum-Colored-Address-Protocol'
 }
 
