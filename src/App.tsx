@@ -48,8 +48,13 @@ const App: React.FC = () => {
       <div id="container" className="absolute inset-0 overflow-auto">
         <header className="sticky top-0 z-50 h-fit py-4 px-8 backdrop-blur-sm bg-white/5 flex justify-between items-center shadow-sm">
           <Link to={"/"}>
-            <h1 className="flex text-lg font-bold">
-              <img src="/eth-shenzhen.svg" alt="ETH ShenZhen" />
+            <h1 className="flex items-center text-white text-lg font-bold">
+              <img
+                src="/eth-shenzhen.svg"
+                alt="ETH ShenZhen"
+                className="w-[92px] h-[28px]"
+              />
+              <span className="ml-4">ETH Colored Address Protocol</span>
             </h1>
           </Link>
 
