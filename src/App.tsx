@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { MenuItems, TestAddress } from "./const";
+import {HowItems, MenuItems, TestAddress, WhyItems} from "./const";
 import { DemoContainer } from "./components";
 import { useRandomAddress } from "./hooks/useRandomAddress";
 import { Background, Footer } from "./layout";
@@ -14,6 +14,7 @@ import {
   Checkbox,
 } from "./components";
 import "./App.scss";
+import TextCard from "./components/TextCard";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -147,14 +148,22 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <div id="why" className="my-6">
+          <div id="why" className="my-6 py-48">
             <p className="text-white text-2xl text-center">Why?</p>
-            <div className="text-white">TODO: 补充内容</div>
+            <div className="flex text-white justify-center pt-16">
+              {WhyItems.map((cardText, index) => (
+                  <TextCard key={`why + ${index}`} title={cardText.title} content={cardText.content}/>
+              ))}
+            </div>
           </div>
 
-          <div id="how" className="my-6">
+          <div id="how" className="my-6 py-48">
             <p className="text-white text-2xl text-center">How?</p>
-            <div className="text-white">TODO: 补充内容</div>
+            <div className="flex text-white justify-center pt-16">
+              {HowItems.map((cardText, index) => (
+                  <TextCard key={`why + ${index}`} title={cardText.title} content={cardText.content}/>
+              ))}
+            </div>
           </div>
 
           <div id="involved" className="my-6">
