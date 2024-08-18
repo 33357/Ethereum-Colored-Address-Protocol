@@ -29,7 +29,7 @@ https://github.com/AdamLeeeee/Ethereum-Colored-Address-Protocol
 
 ## 项目演示
 
-https://arweave.noncegeek.com
+https://eth-colored-address.dnevend.site/
 
 ## 项目讨论
 
