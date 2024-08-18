@@ -112,13 +112,13 @@ const App: React.FC = () => {
                     Simple View
                   </label>
                   <Checkbox
-                    id="refresh"
+                    id="running"
                     defaultChecked={true}
                     className="mr-32"
                     onCheckedChange={toggleInterval}
                   />
                   <label
-                    htmlFor="refresh"
+                    htmlFor="running"
                     className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                   >
                     Auto Refresh
