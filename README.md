@@ -25,11 +25,11 @@ https://github.com/AdamLeeeee/Ethereum-Colored-Address-Protocol
 
 ## Deck 地址
 
-[ethereum-colored-address-protocol.key](./ethereum-colored-address-protocol.key)
+[ethereum-colored-address-protocol.pdf](./ethereum-colored-address-protocol.pdf)
 
 ## 项目演示
 
-https://arweave.noncegeek.com
+https://eth-colored-address.dnevend.site/
 
 ## 项目讨论
 
