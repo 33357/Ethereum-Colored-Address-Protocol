@@ -147,7 +147,7 @@ const App: React.FC = () => {
           </div>
 
           {/* DEMO */}
-          <div id="try" className="my-6 py-36">
+          <div id="try" className="my-6 py-16 sm:py-36">
             <p className="text-white text-2xl text-center pb-16">Try!</p>
             <div className="min-w-80 w-full flex flex-col gap-4 text-gray-100 font-bold bg-slate-50/10 p-4 sm:p-6 rounded-md">
               <Input
@@ -170,7 +170,7 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <div id="why" className="my-6 py-48">
+          <div id="why" className="my-6 py-12 sm:py-48">
             <p className="text-white text-2xl text-center">Why?</p>
             <div className="flex flex-col sm:flex-row justify-center gap-6 pt-16">
               {WhyItems.map((cardText, index) => (
@@ -183,7 +183,7 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <div id="how" className="my-6 py-48">
+          <div id="how" className="my-6 py-12 sm:py-48">
             <p className="text-white text-2xl text-center">How?</p>
             <div className="flex flex-col sm:flex-row justify-center gap-6 pt-16">
               {HowItems.map((cardText, index) => (

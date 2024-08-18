@@ -18,7 +18,7 @@ export const ColorfulAddress = ({
 
   return (
     <div
-      className="overflow-hidden text-xs sm:text-base"
+      className="truncate text-xs sm:text-base"
       style={{ fontFamily: "monospace" }}
     >
       <span>0x</span>
