@@ -1,7 +1,8 @@
 export const Links = {
     ETHShenzhen: "https://www.ethshenzhen.org/",
     Twitter: "https://x.com/33357xyz/status/1824471393297371186",
-    Github: 'https://github.com/AdamLeeeee/Ethereum-Colored-Address-Protocol'
+    Github: 'https://github.com/AdamLeeeee/Ethereum-Colored-Address-Protocol',
+    GithubCover: 'https://github.html.zone/AdamLeeeee/Ethereum-Colored-Address-Protocol',
 }
 
 export const TestAddress = [
