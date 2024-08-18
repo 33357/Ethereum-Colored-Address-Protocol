@@ -61,7 +61,7 @@ const App: React.FC = () => {
       <div id="container" className="absolute inset-0 overflow-auto">
         <header className="sticky top-0 z-50 h-fit py-4 px-8 backdrop-blur-sm bg-white/5 flex justify-between items-center shadow-sm">
           <Link to={"/"}>
-            <h1 className="flex items-center text-white text-lg font-bold">
+            <h1 className="flex items-center text-white text-sm sm:text-lg font-bold">
               <img
                 src="/eth-shenzhen.svg"
                 alt="ETH ShenZhen"
@@ -80,8 +80,8 @@ const App: React.FC = () => {
           </ul>
         </header>
 
-        <main className="max-w-screen-xl mx-auto p-6">
-          <div className="w-full flex flex-col items-center justify-center h-dvh -mt-[88px]">
+        <main className="max-w-screen-xl mx-auto p-4 sm:p-6">
+          <div className="w-full flex flex-col items-center justify-center h-dvh mt-0 sm:-mt-[88px]">
             <div className="w-full flex flex-col md:flex-row justify-between items-center">
               <div className="flex flex-col gap-4">
                 <h1 className="font-bold text-4xl bg-gradient-to-r from-cyan-500 to-fuchsia-500 bg-clip-text text-transparent">
