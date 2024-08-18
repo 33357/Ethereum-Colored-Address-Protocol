@@ -59,7 +59,7 @@ const App: React.FC = () => {
       <Background />
 
       <div id="container" className="absolute inset-0 overflow-auto">
-        <header className="sticky top-0 z-50 h-fit py-4 px-8 backdrop-blur-sm bg-white/5 flex justify-between items-center shadow-sm">
+        <header className="sticky top-0 z-50 h-fit py-4 px-4 sm:px-8 backdrop-blur-sm bg-white/5 flex justify-between items-center shadow-sm">
           <Link to={"/"}>
             <h1 className="flex items-center text-white text-sm sm:text-lg font-bold">
               <img

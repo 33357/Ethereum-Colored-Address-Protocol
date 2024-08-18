@@ -4,7 +4,7 @@ import { Links } from "../const";
 import { Github, Twitter } from "lucide-react";
 
 export const Footer = () => (
-  <footer className="text-center py-4 px-12 text-white border-t border-gray-600 flex justify-between">
+  <footer className="text-center py-4 px-4 sm:px-12 text-white border-t border-gray-600 flex justify-between">
     <span>
       <Link to={Links.ETHShenzhen} target="_blank" className="hover:underline">
         ETHShenzhen
