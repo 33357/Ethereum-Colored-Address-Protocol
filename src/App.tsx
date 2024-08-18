@@ -151,7 +151,7 @@ const App: React.FC = () => {
             <p className="text-white text-2xl text-center pb-16">Try!</p>
             <div className="min-w-80 w-full flex flex-col gap-4 text-gray-100 font-bold bg-slate-50/10 p-4 sm:p-6 rounded-md">
               <Input
-                className="w-full"
+                className="w-full text-xs sm:text-base"
                 value={address}
                 placeholder="ETH Address"
                 icon={<WalletIcon />}
