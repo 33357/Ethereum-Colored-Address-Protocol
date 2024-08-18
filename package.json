@@ -9,7 +9,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "clsx": "^2.1.1",
-    "connectkit": "^1.8.2",
     "ethers": "^6.13.2",
     "framer-motion": "^11.3.28",
     "js-sha256": "^0.11.0",
@@ -20,7 +19,6 @@
     "react-scripts": "5.0.1",
     "tailwind-merge": "^2.5.2",
     "viem": "2.x",
-    "wagmi": "^2.12.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
