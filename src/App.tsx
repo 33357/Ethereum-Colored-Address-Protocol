@@ -96,7 +96,7 @@ const App: React.FC = () => {
                 <div className="mt-8">{MainButton("#try")}</div>
               </div>
 
-              <div className="h-fit max-w-[500px] w-full mt-10 md:mt-0 flex flex-col gap-4 items-center justify-center p-6 bg-gray-300/10 backdrop-blur-sm rounded-lg shadow-sm font-bold text-gray-100">
+              <div className="h-fit max-w-[500px] w-full mt-10 md:mt-0 flex flex-col gap-4 items-center justify-center p-4 sm:p-6 bg-gray-300/10 backdrop-blur-sm rounded-lg shadow-sm font-bold text-gray-100">
                 <div className="w-full flex justify-start items-center space-x-2">
                   <Checkbox
                     id="mode"
@@ -149,7 +149,7 @@ const App: React.FC = () => {
           {/* DEMO */}
           <div id="try" className="my-6 py-36">
             <p className="text-white text-2xl text-center pb-16">Try!</p>
-            <div className="min-w-80 w-full flex flex-col gap-4 text-gray-100 font-bold bg-slate-50/10 p-6 rounded-md">
+            <div className="min-w-80 w-full flex flex-col gap-4 text-gray-100 font-bold bg-slate-50/10 p-4 sm:p-6 rounded-md">
               <Input
                 className="w-full"
                 value={address}
@@ -198,7 +198,7 @@ const App: React.FC = () => {
 
           <div id="support" className="my-6">
             <p className="text-white text-2xl text-center">Support</p>
-            <div className="flex flex-col justify-between gap-4 items-center my-16 px-20">
+            <div className="flex flex-col justify-between gap-4 items-center my-16 px-4 sm:px-20">
               <Link to={Links.Github} target="_blank">
                 <img
                   src={Links.GithubCover}
