@@ -12,7 +12,7 @@ export const AddressPattern = ({ address }: { address: string }) => {
       className="overflow-hidden text-ellipsis"
       style={{ fontFamily: "monospace" }}
     >
-      <div className="text-xs sm:text-sm truncate mb-2">{address}</div>
+      <div className="text-xs sm:text-base truncate mb-2">{address}</div>
       <div className="flex justify-between">
         <div className="flex gap-1">
           {colors.slice(0, 5).map((color, index) => (
