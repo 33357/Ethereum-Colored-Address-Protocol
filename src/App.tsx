@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { HowItems, Links, MenuItems, TestAddress, WhyItems } from "./const";
-import { DemoContainer } from "./components";
+import { DemoContainer, DeviceExample } from "./components";
 import { useRandomAddress } from "./hooks/useRandomAddress";
 import { Background, Footer } from "./layout";
 import { motion } from "framer-motion";
@@ -145,6 +145,8 @@ const App: React.FC = () => {
               </div>
             </div>
           </div>
+
+          <DeviceExample />
 
           {/* DEMO */}
           <div id="try" className="my-6 py-16 sm:py-36">

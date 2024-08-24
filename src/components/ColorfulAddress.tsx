@@ -1,15 +1,22 @@
 import React from "react";
-import { isValidAddress } from "../lib/utils";
+import { cn, isValidAddress } from "../lib/utils";
 import { calculateColors } from "../lib/eth-color";
 
 export const ColorfulAddress = ({
   address,
   simple,
+  className,
 }: {
   address: string;
   simple?: boolean;
+  className?: string;
 }) => {
-  if (!isValidAddress(address)) return <span>{address || "0x..."}</span>;
+  if (!isValidAddress(address))
+    return (
+      <span className={cn("truncate text-xs sm:text-base", className)}>
+        {address || "0x..."}
+      </span>
+    );
 
   const colors = calculateColors(address);
 
@@ -18,7 +25,7 @@ export const ColorfulAddress = ({
 
   return (
     <div
-      className="truncate text-xs sm:text-base"
+      className={cn("truncate text-xs sm:text-base", className)}
       style={{ fontFamily: "monospace" }}
     >
       <span>0x</span>
