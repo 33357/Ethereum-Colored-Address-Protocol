@@ -12,7 +12,7 @@ export const ExampleCard = () => {
   const [enable, setEnable] = useState<boolean>(true);
   const [mode, setMode] = useState<"simple" | "normal">("normal");
   const [refreshing, setRefreshing] = useState<boolean>(true);
-  const [showDiff, setShowDiff] = useState<boolean>(false);
+  const [showDiff, setShowDiff] = useState<boolean>(true);
   const diffWith = showDiff ? addresses[0] : undefined;
 
   useEffect(() => {
