@@ -1,48 +1,23 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { HowItems, Links, MenuItems, TestAddress, WhyItems } from "./const";
-import { DemoContainer, DeviceExample } from "./components";
-import { useRandomAddress } from "./hooks/useRandomAddress";
+import { DemoContainer, DeviceExample, ExampleCard } from "./components";
 import { Background, Footer } from "./layout";
-import { motion } from "framer-motion";
+import { scrollIntoViewById } from "./lib/utils";
 import {
   Input,
   ColorfulAddress,
   AddressPattern,
   MainButton,
   WalletIcon,
-  Checkbox,
+  TwitterCard,
+  TextCard,
 } from "./components";
 import "./App.scss";
-import TextCard from "./components/TextCard";
-import { scrollIntoViewById } from "./lib/utils";
-import { TwitterCard } from "./components/TwitterCard";
 
 const App: React.FC = () => {
   const location = useLocation();
-  const [address, setAddress] = useState<string>(TestAddress[0]);
-  const [mode, setMode] = useState<"simple" | "normal">("normal");
-  const { addresses, generate } = useRandomAddress();
-  const [isRunning, setIsRunning] = useState<boolean>(true); // 跟踪定时器是否正在运行
-  const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    if (isRunning) {
-      intervalIdRef.current = setInterval(() => {
-        generate();
-      }, 5000); // 固定间隔时间为 5000 毫秒
-    } else if (intervalIdRef.current) {
-      clearInterval(intervalIdRef.current); // 停止定时器
-      intervalIdRef.current = null;
-    }
-
-    // 清理函数，在组件卸载时清除定时器
-    return () => clearInterval(intervalIdRef.current!);
-  }, [isRunning, generate]);
-
-  const toggleInterval = () => {
-    setIsRunning((prev) => !prev); // 切换定时器的运行状态
-  };
+  const [address, setAddress] = useState<string>(TestAddress);
 
   useEffect(() => {
     if (location.hash) {
@@ -96,53 +71,7 @@ const App: React.FC = () => {
                 <div className="mt-8">{MainButton("#try")}</div>
               </div>
 
-              <div className="h-fit max-w-[500px] w-full mt-10 md:mt-0 flex flex-col gap-4 items-center justify-center p-4 sm:p-6 bg-gray-300/10 backdrop-blur-sm rounded-lg shadow-sm font-bold text-gray-100">
-                <div className="w-full flex justify-start items-center space-x-2">
-                  <Checkbox
-                    id="mode"
-                    value={"simple"}
-                    onCheckedChange={(v) => {
-                      setMode(v ? "simple" : "normal");
-                    }}
-                  />
-                  <label
-                    htmlFor="mode"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    Simple View
-                  </label>
-                  <Checkbox
-                    id="running"
-                    defaultChecked={true}
-                    className="mr-32"
-                    onCheckedChange={toggleInterval}
-                  />
-                  <label
-                    htmlFor="running"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    Auto Refresh
-                  </label>
-                </div>
-                {addresses.map((it, index) => (
-                  <motion.div
-                    key={it}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: index * 0.2,
-                    }}
-                    className="flex justify-center w-full overflow-hidden"
-                  >
-                    <ColorfulAddress
-                      key={it}
-                      address={it}
-                      simple={mode === "simple"}
-                    />
-                  </motion.div>
-                ))}
-              </div>
+              <ExampleCard />
             </div>
           </div>
 

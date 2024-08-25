@@ -5,13 +5,7 @@ export const Links = {
     GithubCover: 'https://github.html.zone/AdamLeeeee/Ethereum-Colored-Address-Protocol',
 }
 
-export const TestAddress = [
-    "0x083472830762025D11d8d7acb60525f3F361eb84",
-    "0x78d5366c05A8Be53fb8470b520983f4dB60A219F",
-    "0xc2420f4B440118bA32624866D3Dc02AfD1a255c0",
-    "0x9Cd994213C5A86B3a7e778BED76CF08b80d37aAC",
-    "0xD96667Dc0F4C18367DA4A6C0293D20Fe7DF617C3"
-]
+export const TestAddress = "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045"
 
 export const MenuItems = [
     {

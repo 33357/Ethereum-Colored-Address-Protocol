@@ -5,7 +5,7 @@ interface CardProps {
   content: string;
 }
 
-const TextCard: React.FC<CardProps> = ({ title, content }) => {
+export const TextCard: React.FC<CardProps> = ({ title, content }) => {
   return (
     <div className="w-full">
       <div className="font-bold text-xl text-white mb-2">{title}</div>
