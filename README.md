@@ -13,7 +13,7 @@
 
 ## 代码仓库地址
 
-https://github.com/AdamLeeeee/Ethereum-Colored-Address-Protocol
+https://github.com/33357/Ethereum-Colored-Address-Protocol
 
 ## 团队成员
 
@@ -29,7 +29,7 @@ https://github.com/AdamLeeeee/Ethereum-Colored-Address-Protocol
 
 ## 项目演示
 
-https://eth-colored-address.dnevend.site/
+https://address.33357.xyz/
 
 ## 项目讨论
 
@@ -38,7 +38,7 @@ https://x.com/33357xyz/status/1824471393297371186
 ## 项目部署
 
 ```bash
-git clone https://github.com/AdamLeeeee/Ethereum-Colored-Address-Protocol
+git clone https://github.com/33357/Ethereum-Colored-Address-Protocol
 
 cd Ethereum-Colored-Address-Protocol
 
