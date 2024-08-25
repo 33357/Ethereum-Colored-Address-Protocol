@@ -1,5 +1,5 @@
 import React from "react";
-import { cn, isValidAddress } from "../lib/utils";
+import { cn, isValidAddress, simpleAddress } from "../lib/utils";
 import { calculateColors } from "../lib/eth-color";
 
 export const ColorfulAddress = ({
@@ -21,7 +21,7 @@ export const ColorfulAddress = ({
         className={cn("truncate text-xs sm:text-base", className)}
         style={{ fontFamily: "monospace" }}
       >
-        {address || "0x..."}
+        {address ? (simple ? simpleAddress(address) : address) : "0x..."}
       </span>
     );
 
